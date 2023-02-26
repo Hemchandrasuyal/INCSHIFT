@@ -1,4 +1,4 @@
-package com.starapp.showlist_employees_to_manager.dto;
+package com.starapp.incshift.dto;
 
 public class ManagerRequest {
 public int getEmployeeId() {

@@ -1,4 +1,4 @@
-package com.starapp.showlist_employees_to_manager.repository.dto;
+package com.starapp.incshift.repository.dto;
 
 public class EmployeeLogin {
 	Integer employeeId;

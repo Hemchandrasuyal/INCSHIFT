@@ -1,4 +1,4 @@
-package com.starapp.showlist_employees_to_manager.entity;
+package com.starapp.incshift.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

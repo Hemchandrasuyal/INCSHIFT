@@ -1,4 +1,4 @@
-package com.starapp.showlist_employees_to_manager.controller;
+package com.starapp.incshift.controller;
 
 import java.util.List;
 
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.starapp.showlist_employees_to_manager.entity.Project;
-import com.starapp.showlist_employees_to_manager.entity.Timesheet;
-import com.starapp.showlist_employees_to_manager.repository.ProjectRepository;
-import com.starapp.showlist_employees_to_manager.repository.dto.EmployeeRequest;
+import com.starapp.incshift.entity.Project;
+import com.starapp.incshift.entity.Timesheet;
+import com.starapp.incshift.repository.ProjectRepository;
+import com.starapp.incshift.repository.dto.EmployeeRequest;
 
 @RestController
 public class ProjectController {

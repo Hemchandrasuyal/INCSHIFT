@@ -1,4 +1,4 @@
-package com.starapp.showlist_employees_to_manager.controller;
+package com.starapp.incshift.controller;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.starapp.showlist_employees_to_manager.entity.ProjectEmployeeMapping;
-import com.starapp.showlist_employees_to_manager.repository.ProjectEmployeeMappingRepository;
+import com.starapp.incshift.entity.ProjectEmployeeMapping;
+import com.starapp.incshift.repository.ProjectEmployeeMappingRepository;
 @RestController
 public class ProjectEmployeeMappingController {
 	@Autowired

@@ -1,4 +1,4 @@
-package com.starapp.showlist_employees_to_manager.controller;
+package com.starapp.incshift.controller;
 
 import java.util.List;
 
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.starapp.showlist_employees_to_manager.dto.ManagerRequest;
-import com.starapp.showlist_employees_to_manager.entity.Employee;
-import com.starapp.showlist_employees_to_manager.entity.Project;
-import com.starapp.showlist_employees_to_manager.entity.ProjectEmployeeMapping;
-import com.starapp.showlist_employees_to_manager.entity.Timesheet;
-import com.starapp.showlist_employees_to_manager.repository.EmployeeRepository;
-import com.starapp.showlist_employees_to_manager.repository.TimesheetRepository;
-import com.starapp.showlist_employees_to_manager.repository.dto.EmployeeLogin;
-import com.starapp.showlist_employees_to_manager.repository.dto.EmployeeRequest;
+import com.starapp.incshift.dto.ManagerRequest;
+import com.starapp.incshift.entity.Employee;
+import com.starapp.incshift.entity.Project;
+import com.starapp.incshift.entity.ProjectEmployeeMapping;
+import com.starapp.incshift.entity.Timesheet;
+import com.starapp.incshift.repository.EmployeeRepository;
+import com.starapp.incshift.repository.TimesheetRepository;
+import com.starapp.incshift.repository.dto.EmployeeLogin;
+import com.starapp.incshift.repository.dto.EmployeeRequest;
 
 @RestController
 public class TimesheetController {

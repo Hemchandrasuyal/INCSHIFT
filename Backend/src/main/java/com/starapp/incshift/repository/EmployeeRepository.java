@@ -1,12 +1,12 @@
-package com.starapp.showlist_employees_to_manager.repository;
+package com.starapp.incshift.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.starapp.showlist_employees_to_manager.entity.Employee;
-import com.starapp.showlist_employees_to_manager.entity.Project;
-import com.starapp.showlist_employees_to_manager.repository.dto.EmployeeLogin;
+import com.starapp.incshift.entity.Employee;
+import com.starapp.incshift.entity.Project;
+import com.starapp.incshift.repository.dto.EmployeeLogin;
 
 public interface EmployeeRepository extends JpaRepository<Employee,Integer>{
 //	@Query("SELECT c.Projectid from Project c ")
