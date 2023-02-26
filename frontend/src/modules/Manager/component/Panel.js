@@ -54,7 +54,7 @@ const Panel = ({ changeDisplay,data}) => {
            value={item.project_id}
            key={item.project_id}
            onClick={handleClick}
-           style={{ color: "#043465", backgroundColor: "#ef4815" }}
+           style={{   color: "white", backgroundColor: "#ef4815" }}
          >
       {item.projectName}
          </MenuItem>

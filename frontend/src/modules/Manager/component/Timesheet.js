@@ -9,7 +9,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import InputAdornment from "@mui/material/InputAdornment";
 import logo from "../../../assets/Capture.png";
 import axios from 'axios';
-import {useNavigate} from "react-router-dom"
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#043465",
   ...theme.typography.body2,
@@ -20,12 +20,12 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Timesheet = ({ data, display }) => {
  
-  const handleClick = (e) => {
+ const handleClick = (e) => {
     const f=e.target.id;
      
       const url=`http://localhost:8080/java/Manager/Timesheet/Approve/${f}`;
     axios.patch(url).then((result)=>{
-  
+      window.location.reload(false);
     console.log(result)
    
    }).catch((error)=>{
@@ -82,7 +82,7 @@ const Timesheet = ({ data, display }) => {
                 <p>End Date:{item.endDate}</p>
                 <p>Allocation:{item.hours}</p>
                 <p>Status:{item.approval}</p>
-                <button onClick={handleClick} id={item.timesheetId}>Approve</button>
+                <button onClick={handleClick}  id={item.timesheetId} >Approve</button>
               </Item>
             </Grid>
           ))}
