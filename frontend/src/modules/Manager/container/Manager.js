@@ -13,6 +13,7 @@ import axios from 'axios';
 const Manager = () => {
   const [display, setDisplay] = useState();
   const [timsheetDisplay, setTimesheetDisplay] = useState([]);
+ 
   const location=useLocation();
   const [dataManager, setdataManager] = useState(location);
   const changeDisplay = (props) => {

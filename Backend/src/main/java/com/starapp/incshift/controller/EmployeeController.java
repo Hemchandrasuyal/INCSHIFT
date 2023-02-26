@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.starapp.incshift.dto.AuthenticationRequest;
+import com.starapp.incshift.dto.TimesheetUpdateRequest;
 import com.starapp.incshift.entity.Employee;
 import com.starapp.incshift.entity.Project;
 import com.starapp.incshift.repository.EmployeeRepository;

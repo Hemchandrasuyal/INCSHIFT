@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.starapp.incshift.dto.ManagerRequest;
+import com.starapp.incshift.dto.TimesheetUpdateRequest;
 import com.starapp.incshift.entity.Employee;
 import com.starapp.incshift.entity.Project;
 import com.starapp.incshift.entity.ProjectEmployeeMapping;
@@ -35,9 +36,10 @@ public class TimesheetController {
 	  
 		return timesheetRepository.findAllTimesheet(managerid);
 	}
-	//update status of timesheet of employee by manager
-	@PatchMapping("/java/showtimesheettomanager/{managerid}/{timesheetid}")
-	public Timesheet updatestatus(@PathVariable int managerid,@PathVariable String timesheetid) {
+	//update status of timesheet of employee by manager	
+	@CrossOrigin("*")
+	@PatchMapping("/java/Manager/Timesheet/Approve/{timesheetid}")
+	public Timesheet updatestatus(@PathVariable String timesheetid) {
 		Timesheet timesheet = timesheetRepository.findBytimesheetId(timesheetid);
 		timesheet.setApproval(1);
 	
@@ -99,6 +101,15 @@ public class TimesheetController {
 		return ResponseEntity.ok(timesheetRepository.findByemployeeId(managerRequest.getEmployeeId(),managerRequest.getProjectId()));
 	}
 	
-
+//	//update status of timesheet of employee by manager
+//		@PatchMapping("/java/Manager/Timesheet/Approve")
+//		public ResponseEntity<Timesheet> updatestatuss(@RequestBody TimesheetUpdateRequest timesheetUpdateRequest) {
+//			System.out.println(timesheetUpdateRequest.getTimesheetId());
+//			Timesheet timesheet = timesheetRepository.findBytimesheetId(timesheetUpdateRequest.getTimesheetId());
+//			timesheet.setApproval(1);
+//		
+//			return ResponseEntity.ok(timesheetRepository.save(timesheet));
+//			
+//		}
 	
 }

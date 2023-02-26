@@ -32,12 +32,12 @@ const Main = (props) => {
  
   const handleClickApproved = (e) => {
     if (e.target.id == "approved") {
-      console.log({dataAprroved})     
+      
       const url='http://localhost:8080/java/Employee/Timesheet/approved';
  axios.post(url,dataAprroved).then((result)=>{
   setData(result.data);
   setCount({approved:result.data.length})
-       console.log(result.data);
+   
 }).catch((error)=>{
      console.log(error)
 });
@@ -48,8 +48,7 @@ const Main = (props) => {
      
       const url='http://localhost:8080/java/Employee/Timesheet/approved';
 axios.post(url,dataRejected).then((result)=>{
-  console.log(dataRejected)
-       console.log(result.data);
+ 
        setData(result.data);
        setCount({rejected:result.data.length})
 }).catch((error)=>{
