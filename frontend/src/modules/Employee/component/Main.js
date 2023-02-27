@@ -82,9 +82,7 @@ axios.post(url,dataRejected).then((result)=>{
           <div className="status" onClick={handleClickRejected} id="rejected">Approved {count.rejected}</div>
          
         </Grid>
-        <Grid item xs={2}>
-          <div className="week-status">Dropdown {count.pending}</div>
-        </Grid>
+       
       </Grid>
 
       <Box sx={{ flexGrow: 1 }} style={{ margin: "180px 20px 0px 20px" }}>
