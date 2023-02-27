@@ -21,7 +21,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Timesheet = ({ data, display }) => {
 
-
+const[filteredItem,setFilteredItem]=useState([]);
  const handleClick = (e) => {
     const f=e.target.id;
      
@@ -34,7 +34,14 @@ const Timesheet = ({ data, display }) => {
    });
   };
 
-
+// const searchInput=(event)=>{
+//   const newQuery=event.target.value;
+//   setQuery(newQuery);
+//   const filtered=data.filter(item=>{
+// return item.employee_name.toLowerCase().includes(newQuery.toLowerCase());
+//   });
+//   setData(filtered);
+// }
 
 
   return (
@@ -50,12 +57,14 @@ const Timesheet = ({ data, display }) => {
       <Box sx={{ display: "flex", alignItems: "flex-end", marginTop: "10px" }}>
         <span className="timesheet">{display}</span>{" "}
         <TextField
+        // value={query}
+        //  onChange={searchInput }
           id="input-with-icon-textfield"
           label="Search Timesheet"
           InputProps={{
             startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon
+              <InputAdornment position="start" >
+                <SearchIcon 
                   sx={{ color: "#ef4815", mr: 0, my: 1, fontSize: "30px" }}
                 />
               </InputAdornment>
