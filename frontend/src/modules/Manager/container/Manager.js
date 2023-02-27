@@ -4,16 +4,14 @@ import Navbar from "../../Navbar/Navbar";
 import Panel from "../component/Panel";
 import Grid from "@mui/material/Grid";
 import Timesheet from "../component/Timesheet";
-
-import projectOne from "../../../assets/data/showtimesheettomanagerprojectwise.json";
 import ReporteeList from "../component/ReporteeList";
-import {useNavigate} from "react-router-dom";
 import {useLocation} from "react-router-dom";
 import axios from 'axios';
+
 const Manager = () => {
   const [display, setDisplay] = useState();
   const [timsheetDisplay, setTimesheetDisplay] = useState([]);
- 
+
   const location=useLocation();
   const [dataManager, setdataManager] = useState(location);
   const changeDisplay = (props) => {
@@ -69,11 +67,9 @@ const dataOfManagerProject={employeeId:dataManager.state.EmployeeId,projectId:di
         </Grid>
 
         <Grid item xs={8} md={8}>
-          {display == "reportee-list" ? (
-            <ReporteeList />
-          ) : (
+       
             <Timesheet data={timsheetDisplay} display={display}  />
-          )}
+     
         </Grid>
       </Grid>
 

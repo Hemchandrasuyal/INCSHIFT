@@ -54,7 +54,7 @@ const Panel = ({ changeDisplay,data}) => {
            value={item.project_id}
            key={item.project_id}
            onClick={handleClick}
-           style={{   color: "white", backgroundColor: "#ef4815" }}
+           style={{ color: "#043465", backgroundColor: "#ef4815" }}
          >
       {item.projectName}
          </MenuItem>
@@ -78,10 +78,8 @@ const Panel = ({ changeDisplay,data}) => {
           </MenuItem> */}
         </Select>
       </p>
-
-      <p className="left-panel" id="reportee-list" onClick={handleClick}>
-        Reportee List
-      </p>
+      <p className="left-panel" id="reportee-list" onClick={handleClick}>              </p>
+     
     </div>
   );
 };

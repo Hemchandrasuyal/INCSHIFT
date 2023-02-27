@@ -16,23 +16,22 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   color: "white",
   height: "240px",
+  
 }));
 
 const Timesheet = ({ data, display }) => {
- 
+
+
  const handleClick = (e) => {
     const f=e.target.id;
      
       const url=`http://localhost:8080/java/Manager/Timesheet/Approve/${f}`;
     axios.patch(url).then((result)=>{
-      window.location.reload(false);
+
     console.log(result)
-   
    }).catch((error)=>{
         console.log(error)
    });
-
-   
   };
 
 
@@ -48,7 +47,7 @@ const Timesheet = ({ data, display }) => {
         backgroundPositionY: "100px",
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "flex-end", marginTop: "20px" }}>
+      <Box sx={{ display: "flex", alignItems: "flex-end", marginTop: "10px" }}>
         <span className="timesheet">{display}</span>{" "}
         <TextField
           id="input-with-icon-textfield"
@@ -82,7 +81,7 @@ const Timesheet = ({ data, display }) => {
                 <p>End Date:{item.endDate}</p>
                 <p>Allocation:{item.hours}</p>
                 <p>Status:{item.approval}</p>
-                <button onClick={handleClick}  id={item.timesheetId} >Approve</button>
+                <button onClick={handleClick}  id={item.timesheetId} type="button">Approve</button>
               </Item>
             </Grid>
           ))}

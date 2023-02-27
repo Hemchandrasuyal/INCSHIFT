@@ -15,6 +15,7 @@ export default function Login() {
   const handleChange=(event,field)=>{
    
     let actualValue=event.target.value
+
     setLoginDetails({
       ...LoginDetails,
       [field]:actualValue
@@ -24,7 +25,9 @@ export default function Login() {
   const handleFormSubmit=(event)=>{
     event.preventDefault()
     console.log(LoginDetails)
-
+if(LoginDetails.employeeId==='' || LoginDetails.password===''){
+alert("fill credentials")
+}
 
 const url='http://localhost:8080/java/login';
 axios.post(url,LoginDetails).then((result)=>{
@@ -32,10 +35,14 @@ axios.post(url,LoginDetails).then((result)=>{
   if(result.data.role==="manager"){
     navigate("/manager",{ state:{EmployeeId:result.data.employee_id,EmployeeName:result.data.employee_name},});
   }
-  else{
+
+ else if(result.data.role==="employee"){
     navigate("/employee",{ state:{EmployeeId:result.data.employee_id,EmployeeName:result.data.employee_name},});
   }
   
+  else{
+    alert("user not found")
+  }
      
 }).catch((error)=>{
      alert(error.data)
