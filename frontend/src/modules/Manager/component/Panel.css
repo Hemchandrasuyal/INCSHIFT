@@ -4,7 +4,9 @@
   padding-top: 50px;
   color: white;
   height: 100%;
-  width:250px
+  width:58%;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 .left-panel,

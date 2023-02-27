@@ -33,7 +33,7 @@ function Navbar(props) {
 
   return (
     <AppBar position="static" style={{ backgroundColor: "#043465" }}>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" style={{padding:0}}>
         <Toolbar disableGutters>
           <Typography
             sx={{

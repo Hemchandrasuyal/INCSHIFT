@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 // style={{ backgroundColor: "#ef4815", paddingTop: "7px", paddingLeft: "40px", marginTop: "30px"}}
 const Footer = () => {
   return (
-    <Grid
+    <Grid 
       container
       spacing={{ xs: 2, md: 3 }}
       columns={{ xs: 4, sm: 8, md: 12 }}
@@ -17,9 +17,9 @@ const Footer = () => {
         paddingBottom: "20px",
       }}
     >
-      <Grid item xs={10}>
-<a href="https://www.facebook.com/IncedoInc" target="_blank">      <FacebookIcon href="www" style={{ color: "#043465", fontSize: "35px" }} /></a> 
-<a href="https://www.linkedin.com/company/incedo-inc/mycompany/" target="_blank">  <LinkedInIcon style={{ color: "#043465", fontSize: "35px" }} /></a>
+      <Grid item xs={10} >
+      <a href="https://www.facebook.com/IncedoInc" target="_blank">      <FacebookIcon href="www" style={{ color: "#043465", fontSize: "35px" }} /></a> 
+      <a href="https://www.linkedin.com/company/incedo-inc/mycompany/" target="_blank">  <LinkedInIcon style={{ color: "#043465", fontSize: "35px" }} /></a>
       </Grid>
       <Grid item xs={2}>
         <a href="https://www.incedoinc.com/contact/" target="_blank" style={{ color: "#043465", fontWeight: "bolder" }}>

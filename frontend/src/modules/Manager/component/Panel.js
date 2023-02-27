@@ -7,7 +7,15 @@ const Panel = ({ changeDisplay,data}) => {
   const [selected, setSelected] = useState("Reportees Timesheet");
   const [projectData,setProjectData]=useState([])
  
-
+  useEffect(() => {
+    const url='http://localhost:8080/java/Manager/Project';
+    axios.post(url,dataOfManager).then((result)=>{
+         setProjectData(result.data)
+          console.log(result.data);
+   }).catch((error)=>{
+        console.log(error)
+   });
+  },[]);
 
 
   const selectionChangeHandler = (event) => {
@@ -20,18 +28,10 @@ const Panel = ({ changeDisplay,data}) => {
   };
   const dataOfManager={employeeId:data };
   
-  useEffect(() => {
-    const url='http://localhost:8080/java/Manager/Project';
-    axios.post(url,dataOfManager).then((result)=>{
-         setProjectData(result.data)
-          console.log(result.data);
-   }).catch((error)=>{
-        console.log(error)
-   });
-  },[]);
+
      
   return (
-    <div className="panel-container">
+    <div className="panel-container" style={{marginRight:0}}>
       <p className="left-panel" onClick={handleClick} id="timesheet">
        My Timesheet
       </p>
@@ -45,7 +45,7 @@ const Panel = ({ changeDisplay,data}) => {
           onChange={selectionChangeHandler}
           label="Reportees Timesheet"
         >
-          <InputLabel>Reportees Timesheet</InputLabel>
+          {/* <InputLabel>Reportees Timesheet</InputLabel> */}
 
        
           {projectData.map((item) => (
@@ -54,7 +54,7 @@ const Panel = ({ changeDisplay,data}) => {
            value={item.project_id}
            key={item.project_id}
            onClick={handleClick}
-           style={{ color: "#043465", backgroundColor: "#ef4815" }}
+           style={{ color: "white", backgroundColor: "#ef4815" }}
          >
       {item.projectName}
          </MenuItem>
@@ -78,7 +78,7 @@ const Panel = ({ changeDisplay,data}) => {
           </MenuItem> */}
         </Select>
       </p>
-      <p className="left-panel" id="reportee-list" onClick={handleClick}>              </p>
+      {/* <p className="left-panel" id="reportee-list" onClick={handleClick}>              </p> */}
      
     </div>
   );

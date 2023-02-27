@@ -24,7 +24,7 @@ export default function Login() {
   }
   const handleFormSubmit=(event)=>{
     event.preventDefault()
-    console.log(LoginDetails)
+    // console.log(LoginDetails)
 if(LoginDetails.employeeId==='' || LoginDetails.password===''){
 alert("fill credentials")
 }

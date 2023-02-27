@@ -9,7 +9,7 @@ import {useLocation} from "react-router-dom";
 import axios from 'axios';
 
 const Manager = () => {
-  const [display, setDisplay] = useState();
+  const [display, setDisplay] = useState("timesheet");
   const [timsheetDisplay, setTimesheetDisplay] = useState([]);
 
   const location=useLocation();
@@ -21,8 +21,7 @@ const Manager = () => {
 const dataOfManager={employeeId:dataManager.state.EmployeeId };
 const dataOfManagerProject={employeeId:dataManager.state.EmployeeId,projectId:display };
   useEffect(() => {
-    if (display == "timesheet") {
-      const url='http://localhost:8080/java/Manager/Timesheet';
+    const url='http://localhost:8080/java/Manager/Timesheet';
         
     axios.post(url,dataOfManager).then((result)=>{
      
@@ -33,8 +32,8 @@ const dataOfManagerProject={employeeId:dataManager.state.EmployeeId,projectId:di
      }).catch((error)=>{
           console.log(error)
      });
-     
-    } else {
+
+    if(display!='timesheet') {
       const url='http://localhost:8080/java/Manager/Timesheet/Project';
         
       axios.post(url,dataOfManagerProject).then((result)=>{
