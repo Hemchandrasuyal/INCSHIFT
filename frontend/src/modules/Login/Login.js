@@ -40,7 +40,7 @@ axios.post(url,LoginDetails).then((result)=>{
     navigate("/employee",{ state:{EmployeeId:result.data.employee_id,EmployeeName:result.data.employee_name},});
   }
   
-  else{
+  else if(LoginDetails.employeeId==='' && LoginDetails.password===''){
     alert("user not found")
   }
      

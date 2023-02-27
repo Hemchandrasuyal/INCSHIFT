@@ -15,17 +15,19 @@ import  MenuIcon  from "@mui/icons-material/Menu";
 
 import logo from "../../assets/logo.png";
 
-
+import {useNavigate} from "react-router-dom"
 
 function Navbar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   var c=props.data;
   const pages = [c, "Logout"];
+  const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
+    navigate("/");
     setAnchorElNav(null);
   };
 

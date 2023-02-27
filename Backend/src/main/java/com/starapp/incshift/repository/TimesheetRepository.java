@@ -14,10 +14,10 @@ public interface TimesheetRepository extends JpaRepository<Timesheet,String>{
 	List<Timesheet> findAllTimesheet(int Employeeid);
     
 	
-	@Query("select t from Timesheet t where t.employee.Employeeid=?1  ")
+	@Query("select t from Timesheet t where t.employee.Employeeid=?1 and t.Approval=0 ")
 	List<Timesheet> findByemployeeId(int Employeeid);
   
-	@Query("select t from Timesheet t where t.employee.Employeeid!=?1 and t.project.Projectid=?2  ")
+	@Query("select t from Timesheet t where t.employee.Employeeid!=?1 and t.project.Projectid=?2 and t.Approval=0 ")
 	List<Timesheet> findByemployeeId(int Employeeid,String Projectid);
 	
 	@Query("select t from Timesheet t where t.employee.Employeeid=?1 and t.Approval=?2  ")

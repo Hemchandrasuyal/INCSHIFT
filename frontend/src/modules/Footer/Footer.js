@@ -18,13 +18,13 @@ const Footer = () => {
       }}
     >
       <Grid item xs={10}>
-        <FacebookIcon style={{ color: "#043465", fontSize: "35px" }} />
-        <LinkedInIcon style={{ color: "#043465", fontSize: "35px" }} />
+<a href="https://www.facebook.com/IncedoInc" target="_blank">      <FacebookIcon href="www" style={{ color: "#043465", fontSize: "35px" }} /></a> 
+<a href="https://www.linkedin.com/company/incedo-inc/mycompany/" target="_blank">  <LinkedInIcon style={{ color: "#043465", fontSize: "35px" }} /></a>
       </Grid>
       <Grid item xs={2}>
-        <p style={{ color: "#043465", fontWeight: "bolder" }}>
-          FAQ | CONTACT US
-        </p>
+        <a href="https://www.incedoinc.com/contact/" target="_blank" style={{ color: "#043465", fontWeight: "bolder" }}>
+           CONTACT US
+        </a>
       </Grid>
     </Grid>
   );

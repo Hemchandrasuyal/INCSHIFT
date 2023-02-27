@@ -76,11 +76,11 @@ axios.post(url,dataRejected).then((result)=>{
    
         <Grid item xs={10}>
           <div className="status" onClick={handleClickApproved} id="approved">
-            Approved {count.approved}
+            Awaiting Approval {count.approved}
           </div>
          
-          <div className="status" onClick={handleClickRejected} id="rejected">Rejected {count.rejected}</div>
-          <div className="status">Pending {count.pending}</div>
+          <div className="status" onClick={handleClickRejected} id="rejected">Approved {count.rejected}</div>
+         
         </Grid>
         <Grid item xs={2}>
           <div className="week-status">Dropdown {count.pending}</div>
@@ -105,10 +105,9 @@ axios.post(url,dataRejected).then((result)=>{
                 <p>End date:{item.endDate}</p>
               
                 <p>Project name:{item.project.projectName}</p>
-               
-                
-                <p>Remarks:</p>
-                <p>Status:{item.approval}</p>
+      
+                {(item.approval===0)?(<p>Status:Awaiting approval</p>):(<p>Status:Approved</p>)}
+          
               </Item>
             </Grid>
           ))}

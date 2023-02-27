@@ -80,7 +80,7 @@ const Timesheet = ({ data, display }) => {
                 <p>Start date: {item.startDate}</p>
                 <p>End Date:{item.endDate}</p>
                 <p>Allocation:{item.hours}</p>
-                <p>Status:{item.approval}</p>
+                {(item.approval===0)?(<p>Status:Awaiting approval</p>):(<p>Status:Approved</p>)}
                 <button onClick={handleClick}  id={item.timesheetId} type="button">Approve</button>
               </Item>
             </Grid>

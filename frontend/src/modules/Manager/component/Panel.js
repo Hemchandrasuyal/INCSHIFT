@@ -33,13 +33,13 @@ const Panel = ({ changeDisplay,data}) => {
   return (
     <div className="panel-container">
       <p className="left-panel" onClick={handleClick} id="timesheet">
-        Timesheet
+       My Timesheet
       </p>
 
       <p>
   
     <Select
-          style={{ marginTop: 60 }}
+          style={{ marginTop: 60,color:"white" }}
           className="panel"
           value={selected}
           onChange={selectionChangeHandler}
