@@ -21,8 +21,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Timesheet = ({ data, display }) => {
 
-// const[filteredItem,setFilteredItem]=useState([]);
-// const [dataArr,setDataArr]=useState(data);
+// // const [dataArr,setDataArr]=useState(data);
 // setDataArr(data);
 // console.log(dataArr);
  const handleClick = (e) => {
@@ -105,9 +104,10 @@ const Timesheet = ({ data, display }) => {
                 <h2>{item.timesheetId}</h2>
                 <p>Name: {item.employee.employee_name}</p>
                 <p>Start date: {item.startDate}</p>
-                <p>End Date: {item.endDate}</p>
-                <p>Worked Hours: {item.hours}</p>
-                {(item.approval===0)?(<p>Status: Awaiting approval</p>):(<p>Status: Approved</p>)}
+                <p>End Date:{item.endDate}</p>
+                <p>Worked Hours:{item.hours}</p>
+                <p>Allocated Hours:{item.projectemployeemapping.allocation}</p>
+                {(item.approval===0)?(<p>Status:Awaiting approval</p>):(<p>Status:Approved</p>)}
                 <button onClick={handleClick}  id={item.timesheetId} type="button">Approve</button>
               </Item>
             </Grid>
