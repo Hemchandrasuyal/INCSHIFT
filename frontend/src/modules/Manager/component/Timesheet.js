@@ -51,6 +51,7 @@ const Timesheet = ({ data, display }) => {
         backgroundPosition: "top center",
         backgroundSize: "400px",
         backgroundPositionY: "100px",
+        backgroundPositionX: "100px",
       }}
     >
       <Box sx={{ display: "flex", alignItems: "flex-end", marginTop: "10px" }}>
@@ -81,14 +82,14 @@ const Timesheet = ({ data, display }) => {
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {data.map((item) => (
-            <Grid item xs={2} sm={2} md={3}>
+            <Grid item xs={2} sm={2} md={3} style={{minWidth:'33%'}}>
               <Item>
                 <h2>{item.timesheetId}</h2>
-                <p>Employee Name:{item.employee.employee_name}</p>
+                <p>Name: {item.employee.employee_name}</p>
                 <p>Start date: {item.startDate}</p>
-                <p>End Date:{item.endDate}</p>
-                <p>Worked Hours:{item.hours}</p>
-                <p>Allocated Hours:{item.projectemployeemapping.allocation}</p>
+                <p>End Date: {item.endDate}</p>
+                <p>Worked Hours: {item.hours}</p>
+                <p>Allocated Hours: {item.projectemployeemapping.allocation}</p>
                 {(item.approval===0)?(<p>Status:Awaiting approval</p>):(<p>Status:Approved</p>)}
                 <button onClick={handleClick}  id={item.timesheetId} type="button">Approve</button>
               </Item>

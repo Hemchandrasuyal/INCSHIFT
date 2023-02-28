@@ -24,7 +24,6 @@ export default function Login() {
   }
   const handleFormSubmit=(event)=>{
     event.preventDefault()
-    console.log(LoginDetails)
 if(LoginDetails.employeeId==='' || LoginDetails.password===''){
 alert("fill credentials")
 }
@@ -64,6 +63,7 @@ axios.post(url,LoginDetails).then((result)=>{
               className="input-box"
               type="text"
               value={LoginDetails.employeeId}
+              placeholder = 'UserId'
               onChange={(e)=>handleChange(e,'employeeId')}
          
             />
@@ -71,6 +71,7 @@ axios.post(url,LoginDetails).then((result)=>{
               className="input-box"
               type="password"
               value={LoginDetails.password}
+              placeholder = 'Password'
               onChange={(e)=>handleChange(e,'password')}
             />
             <button className="btn">Sign In</button>
